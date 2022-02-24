@@ -1,4 +1,4 @@
-import randomColour from '../src/colours.js';
+import { randomColour } from '../src/colours.js';
 import { updateColour } from '../src/colours.js';
 import { showColour } from '../src/colours.js';
 

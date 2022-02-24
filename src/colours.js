@@ -1,5 +1,6 @@
 const body = document.getElementById("body");
-const colour = document.getElementById("colour");
+const rgbColour = document.getElementById("RGB-colour");
+const hexColour = document.getElementById("HEX-colour");
 
 const rainbow = [
     [255, 0, 0],
@@ -15,7 +16,7 @@ const rainbow = [
 let pointer = 0;
 export let currentColour = [255, 0, 0];
 
-export default class randomColour {
+export class randomColour {
 
     constructor() {
         this.r = Math.floor(Math.random() * 255);
@@ -52,8 +53,16 @@ export function updateColour() {
 }
 
 export function showColour(r, g, b) {
-    console.log(r + ", " + g + ", " + b);
     body.style.backgroundColor = `rgb(${r}, ${g}, ${b})`
-    console.log(colour);
-    colour.innerText = `RGB : ${r}, ${g}, ${b}`
+    rgbColour.innerText = `RGB : ${r}, ${g}, ${b}`;
+    hexColour.innerText = `HEX : #${hex(r)}${hex(g)}${hex(b)}`
+    console.log(parseInt(r, 10).toString(16));
+}
+
+function hex(number){
+    let nr = parseInt(number, 10).toString(16).toUpperCase();
+    if(nr.length === 1){
+        nr = "0" + nr;
+    }
+    return nr;
 }
