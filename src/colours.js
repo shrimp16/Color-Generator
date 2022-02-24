@@ -1,3 +1,6 @@
+const body = document.getElementById("body");
+const colour = document.getElementById("colour");
+
 const rainbow = [
     [255, 0, 0],
     [255, 127, 0],
@@ -10,7 +13,7 @@ const rainbow = [
 ]
 
 let pointer = 0;
-export let currentColour = [255, 255, 255];
+export let currentColour = [255, 0, 0];
 
 export default class randomColour {
 
@@ -44,5 +47,13 @@ export function updateColour() {
 
     if(pointer === 7) pointer = 0;
 
-    body.style.backgroundColor = `rgb(${currentColour[0]}, ${currentColour[1]}, ${currentColour[2]})`
+    showColour(currentColour[0], currentColour[1], currentColour[2]);
+
+}
+
+export function showColour(r, g, b) {
+    console.log(r + ", " + g + ", " + b);
+    body.style.backgroundColor = `rgb(${r}, ${g}, ${b})`
+    console.log(colour);
+    colour.innerText = `RGB : ${r}, ${g}, ${b}`
 }
