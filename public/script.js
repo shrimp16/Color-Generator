@@ -1,20 +1,26 @@
-import randomColour from '../src/colours.js'
+import randomColour from '../src/colours.js';
+import { updateColour } from '../src/colours.js';
 
 const body = document.getElementById("body");
 
-$('#button').click(() => {
-    let newColour = new randomColour();
-    let newColourVal = newColour.getColour();
-    console.log(newColourVal);
-    body.style.backgroundColor = `rgb(${newColourVal[0]}, ${newColourVal[1]}, ${newColourVal[2]})`
-})
+let timer;
+let newColour;
+let currentColour;
 
-$('#random').click(() => {
-    document.querySelector('#random').style.border = "2px black solid";
+$('#button').click(() => {
+    newColour = new randomColour();
+    currentColour = newColour.getColour();
+
+    body.style.backgroundColor = `rgb(${currentColour[0]}, ${currentColour[1]}, ${currentColour[2]})`
+
     document.querySelector('#rainbow').style.border = "";
+    
+    clearInterval(timer);
+    timer = null;
 })
 
 $('#rainbow').click(() => {
-    document.querySelector('#rainbow').style.border = "2px black solid";
-    document.querySelector('#random').style.border = "";
+    document.querySelector('#rainbow').style.borderBottom = "2px solid black";
+    timer = setInterval(updateColour, 10);
 })
+
