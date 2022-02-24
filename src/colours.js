@@ -1,6 +1,8 @@
 const body = document.getElementById("body");
 const rgbColour = document.getElementById("RGB-colour");
 const hexColour = document.getElementById("HEX-colour");
+const rgbToggle = document.getElementById("rgb");
+const hexToggle = document.getElementById("hex");
 
 const rainbow = [
     [255, 0, 0],
@@ -54,6 +56,18 @@ export function updateColour() {
 
 export function showColour(r, g, b) {
     body.style.backgroundColor = `rgb(${r}, ${g}, ${b})`
+    if(!rgbToggle.checked){
+        rgbColour.style.display = "none";
+    }else{
+        rgbColour.style.display = "block";
+    }
+
+    if(!hexToggle.checked){
+        hexColour.style.display = "none";
+    }else{
+        hexColour.style.display = "block";
+    }
+    
     rgbColour.innerText = `RGB : ${r}, ${g}, ${b}`;
     hexColour.innerText = `HEX : #${hex(r)}${hex(g)}${hex(b)}`
     console.log(parseInt(r, 10).toString(16));

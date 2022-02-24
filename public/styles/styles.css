@@ -31,3 +31,7 @@ a {
     cursor: pointer;
     margin-left: 5px;
 }
+
+h2 {
+    display: none;
+}
