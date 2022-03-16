@@ -1,6 +1,6 @@
 # Color-Generator
 
-  Simple app where when you press a button to cahnge the color of the screen
+  Simple app where when you press a button to change the color of the screen
   
   Also has a button that when pressed starts going through the colors of the rainbow
   
