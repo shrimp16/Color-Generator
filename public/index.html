@@ -14,28 +14,20 @@
 <body id="body">
 
     <div class="center">
+
+        <div class="colour-codes">
+            <h2 id="HEX-colour">HEX : #FFFFFF</h2>
+            <h2 id="RGB-colour">RGB : 255, 255, 255</h2>
+        </div>
+
         <div>
-            <div class="options">
-                <p>
-                    <a id="rainbow">
-                        <b>Rainbow</b>
-                    </a>
-                    <!---<a id="random">
-                        <b>Random</b>
-                    </a>-->
-                </p>
-            </div>
-            <button id="button">Change the Colour!</button>
-            <div>
-                <br>
-                <h2 id="HEX-colour">HEX : #FFFFFF</h2>
-                <h2 id="RGB-colour">RGB : 255, 255, 255</h2>
-                <br>
-                <label for="rgb">RGB</label>
-                <input type="checkbox" name="RGB" id="rgb">
-                
-                <label for="hex">HEX</label>
-                <input type="checkbox" name="HEX" id="hex">
+            <button class="colour-changer" id="button">Change the Colour!</button>
+        </div>
+
+        <div class="options">
+            <button class="options-button" id="toggle-button">Options</button>
+            <div class="options-grid">  
+                <button>xxd</button><button>xxdd</button><button>xxddd</button>
             </div>
         </div>
     </div>
