@@ -2,9 +2,13 @@ import { randomColour } from './src/colours.js';
 import { updateColour } from './src/colours.js';
 import { showColour } from './src/colours.js';
 
+let interval = 15;
+
 let timer;
 let newColour;
 let currentColour;
+
+let toggle = false;
 
 $('#button').click(() => {
     newColour = new randomColour();
@@ -12,14 +16,24 @@ $('#button').click(() => {
 
     showColour(currentColour[0], currentColour[1], currentColour[2]);
 
-    document.querySelector('#rainbow').style.border = "";
-    
+    document.querySelector('#rainbow').style.border = "1px black solid"; 
+
     clearInterval(timer);
     timer = null;
 })
 
 $('#rainbow').click(() => {
-    document.querySelector('#rainbow').style.borderBottom = "2px solid black";
-    timer = setInterval(updateColour, 15);
+    document.querySelector('#rainbow').style.border = "2px solid black";
+    timer = setInterval(updateColour, interval);
+})
+
+$('#toggle-button').click(() => {
+    if (!toggle) {
+        document.querySelector('.options-grid').style.display = "block";
+        toggle = true;
+    } else {
+        document.querySelector('.options-grid').style.display = "none";
+        toggle = false;
+    }
 })
 

@@ -34,8 +34,20 @@ button:hover {
     border: 2px black solid;
     padding: 5px;
     border-radius: 10px;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .options-grid {
+    display: none;
+    margin: auto;
+}
+
+.row {
+    margin-top: 5px;
+}
+
+.options-grid > .row > button {
+    width: 100px;
+    border: 1px black solid;
+    border-radius: 5px;;
 }

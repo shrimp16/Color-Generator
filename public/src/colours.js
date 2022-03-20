@@ -55,18 +55,7 @@ export function updateColour() {
 }
 
 export function showColour(r, g, b) {
-    body.style.backgroundColor = `rgb(${r}, ${g}, ${b})`
-    if(!rgbToggle.checked){
-        rgbColour.style.display = "none";
-    }else{
-        rgbColour.style.display = "block";
-    }
-
-    if(!hexToggle.checked){
-        hexColour.style.display = "none";
-    }else{
-        hexColour.style.display = "block";
-    }
+    body.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
     
     rgbColour.innerText = `RGB : ${r}, ${g}, ${b}`;
     hexColour.innerText = `HEX : #${hex(r)}${hex(g)}${hex(b)}`
