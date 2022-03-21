@@ -51,3 +51,11 @@ button:hover {
     border: 1px black solid;
     border-radius: 5px;;
 }
+
+i {
+    transition: 1s;
+}
+.rotate {
+    transform: rotate(180deg);
+    transition: 1s;
+}

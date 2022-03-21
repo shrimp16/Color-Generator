@@ -30,9 +30,11 @@ $('#rainbow').click(() => {
 $('#toggle-button').click(() => {
     if (!toggle) {
         document.querySelector('.options-grid').style.display = "block";
+        document.querySelector('#icon').style.transform = 'rotate(180deg)';
         toggle = true;
     } else {
         document.querySelector('.options-grid').style.display = "none";
+        document.querySelector('#icon').style.transform = 'rotate(0deg)';
         toggle = false;
     }
 })
