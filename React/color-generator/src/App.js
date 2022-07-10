@@ -1,8 +1,11 @@
 import './App.css';
 
+import { StyledButton } from './Styles/Button.styled';
+import { StyledButtonContainer } from './Styles/ButtonContainer.styled';
+
 function App() {
   return (
-    <div className="App">
+    /*<div className="App">
       <header className="App-header">
         <img className="App-logo" alt="logo" />
         <p>
@@ -17,7 +20,8 @@ function App() {
           Learn React
         </a>
       </header>
-    </div>
+    </div>*/
+    <StyledButton>Change the color!</StyledButton>
   );
 }
 
