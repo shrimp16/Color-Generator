@@ -1,3 +1,6 @@
+import { StyledCustomColor } from '../Styles/CustomColor.styled';
+import { StyledInput } from '../Styles/Input.styled';
+
 function CustomColor(props){
 
     function updateRed(e) {
@@ -14,11 +17,11 @@ function CustomColor(props){
 
     if(props.inputView){
         return (
-            <>
-                <input type="number" onChange={updateRed}></input>
-                <input type="number" onChange={updateGreen}></input>
-                <input type="number" onChange={updateBlue}></input>
-            </>
+            <StyledCustomColor>
+                <StyledInput min={0} max={255} type="number" onChange={updateRed}></StyledInput>
+                <StyledInput min={0} max={255} type="number" onChange={updateGreen}></StyledInput>
+                <StyledInput min={0} max={255} type="number" onChange={updateBlue}></StyledInput>
+            </StyledCustomColor>
         )
     } else {
         return (
