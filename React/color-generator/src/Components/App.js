@@ -5,13 +5,12 @@ import { StyledBackground } from '../Styles/Background.styled';
 import { StyledColorDisplay } from '../Styles/ColorDisplay.styled';
 import { StyledContainer } from '../Styles/Container.styled';
 
+import CustomColor from './CustomColor';
+
 function App() {
 
-  const [color, setColor] = useState({r: 255, g: 255, b: 255});
-
-  function rainbow() {
-
-  }
+  const [color, setColor] = useState({ r: 255, g: 255, b: 255 });
+  const [inputView, setInputView] = useState(true);
 
   function changeColor() {
 
@@ -29,13 +28,16 @@ function App() {
 
   }
 
-  //console.log(`rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`);
+  function swapInputView(){
+    setInputView(!inputView);
+  }
 
   return (
     <StyledBackground color={`rgb(${color.r}, ${color.g}, ${color.b})`}>
       <StyledContainer>
         <StyledButton onClick={changeColor}>Change the color!</StyledButton>
-        <StyledButton onClick={rainbow}>Rainbow!</StyledButton>
+        <StyledButton onClick={swapInputView}>Custom Color</StyledButton>
+        <CustomColor inputView={inputView} setColor={setColor} color={color}></CustomColor>
         <StyledColorDisplay>RGB {`${color.r} , ${color.g} , ${color.b}`}</StyledColorDisplay>
       </StyledContainer>
     </StyledBackground>
