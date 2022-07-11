@@ -1,27 +1,13 @@
 import './App.css';
 
 import { StyledButton } from './Styles/Button.styled';
-import { StyledButtonContainer } from './Styles/ButtonContainer.styled';
+import { StyledBackground } from './Styles/Background.styled';
 
 function App() {
   return (
-    /*<div className="App">
-      <header className="App-header">
-        <img className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>*/
-    <StyledButton>Change the color!</StyledButton>
+    <StyledBackground>
+      <StyledButton>Change the color!</StyledButton>
+    </StyledBackground>
   );
 }
 
